@@ -3,14 +3,18 @@
 % Firmament Autopilot
 %
 
-controller_version = 'v0.0.1';
+model_version = 'v0.0.1';
+model_name = 'Template Controller';
+
+%% load configuration
+load('control_default_config.mat');
 
 %% Constant Variable
 CONTROL_CONST.dt = 0.005;   % model execution period, change accordingly
 
 %% Exported Value
 CONTROL_EXPORT_VALUE.period = uint32(CONTROL_CONST.dt*1e3);
-CONTROL_EXPORT_VALUE.model_info = int8(['Template Controller ', controller_version, 0]); % 0 for end of string
+CONTROL_EXPORT_VALUE.model_info = int8([model_name, ' ', model_version, 0]); % 0 for end of string
 
 %% Paramaters
 CONTROL_PARAM_VALUE.A = single(1.0);    % add your own parameters
